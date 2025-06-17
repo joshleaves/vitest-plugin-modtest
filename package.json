@@ -1,0 +1,46 @@
+{
+  "name": "vitest-plugin-modtest",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Rust-style in-file test discovery for Vitest",
+  "author": "Arnaud 'red' Rouyer <red@dreamleaves.org>",
+  "license": "MIT",
+  "homepage": "https://github.com/joshleaves/vitest-plugin-modtest#readme",
+  "bugs": {
+    "url": "https://github.com/joshleaves/vitest-plugin-modtest/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshleaves/vitest-plugin-modtest.git"
+  },
+  "keywords": ["vitest", "plugin", "test"],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "es-module-lexer": "^1.7.0"
+  },
+  "peerDependencies": {
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}
