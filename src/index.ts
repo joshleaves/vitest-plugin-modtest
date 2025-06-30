@@ -1,7 +1,7 @@
 import { readdir, readFile, mkdir, writeFile, unlink } from 'fs/promises'
 import { join, dirname, relative, resolve, extname } from 'path'
 import { parse } from 'es-module-lexer'
-import type { Plugin, ViteDevServer } from 'vite'
+import type { Vite } from 'vitest/node'
 
 declare global {
   type VitestModtest = typeof import('vitest')
@@ -70,7 +70,7 @@ interface VitestPluginModtestOptions {
   extensions?: string[] // default: ['.js', '.jsx', '.ts', '.tsx']
 }
 
-const VitestPluginModtest = (options: VitestPluginModtestOptions = {}): Plugin => {
+const VitestPluginModtest = (options: VitestPluginModtestOptions = {}): Vite.Plugin => {
   const {
     srcDir = 'src',
     testTmpDir = 'test/.tmp',
@@ -149,7 +149,7 @@ const VitestPluginModtest = (options: VitestPluginModtestOptions = {}): Plugin =
   /**
    * Handles file changes during development and updates generated test files as needed.
    */
-  const configureServer = (server: ViteDevServer) => {
+  const configureServer = (server: Vite.ViteDevServer) => {
       // Watch for changes to .js files in src/
       server.watcher.on('change', async (fullFilePath) => {
         if (!fullFilePath.startsWith(resolvedSrcDir))

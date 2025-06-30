@@ -1,7 +1,7 @@
 {
   "name": "vitest-plugin-modtest",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rust-style in-file test discovery for Vitest",
   "author": "Arnaud 'red' Rouyer <red@dreamleaves.org>",
   "license": "MIT",
@@ -34,13 +34,11 @@
     "es-module-lexer": "^1.7.0"
   },
   "peerDependencies": {
-    "vite": "^6.0.0",
     "vitest": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^24.0.3",
     "typescript": "^5.8.3",
-    "vite": "^6.0.0",
     "vitest": "^3.0.0"
   }
 }
